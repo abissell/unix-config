@@ -1,0 +1,10 @@
+# Finding out how to set these was very tricky,
+# consult the Arch Wiki for "mapping scancodes
+# to keycodes". Another useful reference was:
+# https://www.foell.org/justin/remapping-keyboard-keys-in-ubuntu-with-udev-evdev/
+
+evdev:atkbd:dmi:bvn*:bvr*:bd*:svn*:pn*:pvr*     # match all AT (in-built laptop) keyboards
+ KEYBOARD_KEY_3a=leftctrl                       # remap CapsLock to L-Ctrl
+
+evdev:input:b0003v24F0p0137*                    # match Das Keyboard
+ KEYBOARD_KEY_70039=leftctrl                    # remap CapsLock to L-Ctrl
